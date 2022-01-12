@@ -1,0 +1,8 @@
+apiVersion: kubeflow.org/v1beta1
+kind: Profile
+metadata: # kpt-merge: /$(profile-name)
+  name: $(profile-name)
+spec:
+  owner:
+    kind: User
+    name: $(user)

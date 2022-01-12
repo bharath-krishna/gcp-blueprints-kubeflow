@@ -17,11 +17,11 @@
 apiVersion: container.cnrm.cloud.google.com/v1beta1
 kind: ContainerNodePool
 metadata:
-  name: KUBEFLOW-NAME-example # kpt-set: ${name}-example
+  name: kubeflow-test-example # kpt-set: ${name}-example
 # Refer to https://cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool
 # for detailed fields and documentation.
 spec:
-  location: LOCATION # kpt-set: ${location}
+  location: asia-northeast1-a # kpt-set: ${location}
   # You can adjust node zones by:
   # nodeLocations:
   # - gcp-zone-1
@@ -36,8 +36,8 @@ spec:
     metadata:
       disable-legacy-endpoints: "true"
     serviceAccountRef:
-      name: KUBEFLOW-NAME-vm@PROJECT.iam.gserviceaccount.com # kpt-set: ${name}-vm@${gcloud.core.project}.iam.gserviceaccount.com
+      name: kubeflow-test-vm@kfmlops.iam.gserviceaccount.com # kpt-set: ${name}-vm@${gcloud.core.project}.iam.gserviceaccount.com
     workloadMetadataConfig:
       nodeMetadata: GKE_METADATA_SERVER
   clusterRef:
-    name: KUBEFLOW-NAME # kpt-set: ${name}
+    name: kubeflow-test # kpt-set: ${name}

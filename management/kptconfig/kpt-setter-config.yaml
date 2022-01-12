@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: kpt-setter-config
 data:
-  name: MANAGEMENT-NAME # kpt-set: ${name}
-  gcloud.core.project: PROJECT # kpt-set: ${gcloud.core.project}
-  location: LOCATION # kpt-set: ${location}
+  name: mgt-cluster # kpt-set: ${name}
+  gcloud.core.project: kfmlops # kpt-set: ${gcloud.core.project}
+  location: asia-northeast1-a # kpt-set: ${location}

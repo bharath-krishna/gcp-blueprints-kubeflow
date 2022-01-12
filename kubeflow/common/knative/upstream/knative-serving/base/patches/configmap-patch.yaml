@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: # kpt-merge: knative-serving/config-istio
+  name: config-istio
+  namespace: knative-serving
+data:
+  gateway.kubeflow.kubeflow-gateway: istio-ingressgateway.istio-system.svc.cluster.local
+---
+apiVersion: v1
+kind: ConfigMap
+metadata: # kpt-merge: knative-serving/config-deployment
+  name: config-deployment
+  namespace: knative-serving
+data:
+  progressDeadline: 600s

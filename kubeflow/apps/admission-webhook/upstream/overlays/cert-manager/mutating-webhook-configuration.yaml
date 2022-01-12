@@ -1,0 +1,6 @@
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: MutatingWebhookConfiguration
+metadata: # kpt-merge: /mutating-webhook-configuration
+  name: mutating-webhook-configuration
+  annotations:
+    cert-manager.io/inject-ca-from: $(podDefaultsNamespace)/$(podDefaultsCertName)

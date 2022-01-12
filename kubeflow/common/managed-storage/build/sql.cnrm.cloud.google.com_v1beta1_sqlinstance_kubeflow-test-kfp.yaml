@@ -1,0 +1,16 @@
+apiVersion: sql.cnrm.cloud.google.com/v1beta1
+kind: SQLInstance
+metadata:
+  labels:
+    app: managed-storage
+    kf-name: kubeflow-test
+  name: kubeflow-test-kfp
+  namespace: kfmlops
+spec:
+  databaseVersion: MYSQL_5_7
+  region: asia-northeast1
+  settings:
+    availabilityType: ZONAL
+    locationPreference:
+      zone: asia-northeast1-a
+    tier: db-custom-1-3840

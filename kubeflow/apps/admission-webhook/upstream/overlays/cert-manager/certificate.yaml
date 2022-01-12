@@ -1,0 +1,21 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata: # kpt-merge: /cert
+  name: cert
+spec:
+  isCA: true
+  commonName: $(podDefaultsServiceName).$(podDefaultsNamespace).svc
+  dnsNames:
+  - $(podDefaultsServiceName).$(podDefaultsNamespace).svc
+  - $(podDefaultsServiceName).$(podDefaultsNamespace).svc.cluster.local
+  issuerRef:
+    kind: Issuer
+    name: selfsigned-issuer
+  secretName: webhook-certs
+---
+apiVersion: cert-manager.io/v1alpha2
+kind: Issuer
+metadata: # kpt-merge: /selfsigned-issuer
+  name: selfsigned-issuer
+spec:
+  selfSigned: {}

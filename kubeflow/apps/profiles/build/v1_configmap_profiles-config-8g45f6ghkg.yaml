@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  admin: bharath.chakravarthi@gmail.com
+  gcp-sa: kubeflow-test-user@kfmlops.iam.gserviceaccount.com
+kind: ConfigMap
+metadata:
+  labels:
+    kustomize.component: profiles
+  name: profiles-config-8g45f6ghkg
+  namespace: kubeflow

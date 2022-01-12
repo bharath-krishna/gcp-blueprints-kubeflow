@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: # kpt-merge: kfserving-system/kfserving-models-web-app
+  name: kfserving-models-web-app
+  namespace: kfserving-system
+spec:
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/inject: "true"
